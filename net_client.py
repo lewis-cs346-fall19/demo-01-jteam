@@ -6,9 +6,8 @@ print("got here")
 for i in range(100):
 	sock.connect(addr)
 	print("got there")
-	try:
-		msg = i * " "
-		sock.sendall(msg.encode())
-		reply = sock.recv(1024)
-		print(reply)
-sock.close()
+	msg = i * " "
+	sock.sendall(msg.encode())
+	reply = sock.recv(1024)
+	print(reply)
+	sock.close()
