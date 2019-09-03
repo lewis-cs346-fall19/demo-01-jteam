@@ -3,7 +3,9 @@ import socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 addr = ("localhost", 40836)
 sock.connect(addr)
+print("got here")
 for i in range(100):
+	print("got " + i)
 	try:
 		msg = i * " "
 		sock.sendall(msg.encode())
