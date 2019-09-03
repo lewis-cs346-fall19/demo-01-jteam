@@ -8,4 +8,4 @@ for i in range(100):
 	sock.sendall(msg.encode())
 	reply = sock.recv(1024)
 	print(reply)
-	sock.close()
+sock.close()
