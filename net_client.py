@@ -7,5 +7,5 @@ for i in range(100):
 	msg = i * " "
 	sock.sendall(msg.encode())
 	reply = sock.recv(1024)
-	print(sock.recv)
+	print(reply)
 	sock.close()
