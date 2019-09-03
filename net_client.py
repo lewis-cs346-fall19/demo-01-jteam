@@ -8,6 +8,6 @@ for i in range(100):
 	print("got there")
 	msg = i * " "
 	sock.sendall(msg.encode())
-	reply = sock.recv(1024)
+	reply = sock.recv(1024).decode()
 	print(reply)
 	sock.close()
