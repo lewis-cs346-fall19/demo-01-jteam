@@ -6,9 +6,9 @@ sock.bind(addr)
 sock.listen(5)
 while True:
 	(connectedSock, clientAddress) = sock.accept()
-	try
+	try:
 		msg = sock.recv(1024).decode()
 		output = msg.length() * "-"
 		sock.sendall(output.encode())
-	except
+	except:
 		sock.close()
