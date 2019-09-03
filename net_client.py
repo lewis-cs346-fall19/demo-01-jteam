@@ -5,7 +5,7 @@ addr = ("localhost", 40836)
 sock.connect(addr)
 print("got here")
 for i in range(100):
-	print("got " + i)
+	print("got there")
 	try:
 		msg = i * " "
 		sock.sendall(msg.encode())
