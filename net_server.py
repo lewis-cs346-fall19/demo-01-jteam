@@ -7,8 +7,8 @@ sock.listen(5)
 while True:
 	(connectedSock, clientAddress) = sock.accept()
 	try:
-		msg = sock.recv(1024).decode()
+		msg = connectedSock.recv(1024).decode()
 		output = msg.length() * "-"
-		sock.sendall(output.encode())
+		connectedSock.sendall(output.encode())
 	except:
 		sock.close()
