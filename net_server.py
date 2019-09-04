@@ -8,10 +8,10 @@ while True:
 	(connectedSock, clientAddress) = sock.accept()
 	print("got 1")
 	try:
-		msg = connectedSock.recv(1024).decode()
+		msg = sock.recv(1024).decode()
 		print("got 2")
 		output = msg.length() * "-"
-		connectedSock.sendall(output.encode())
+		sock.sendall(output.encode())
 		print("got 3")
 	except:
 		sock.close()
