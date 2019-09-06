@@ -16,5 +16,4 @@ while True:
 	except:
 		connectedSock.close()
 		print("got 4")
-		break
 print("finished")
