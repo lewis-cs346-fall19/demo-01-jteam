@@ -8,17 +8,15 @@ sock.bind(addr)
 sock.listen(5)
 while True:
 	(connectedSock, clientAddress) = sock.accept()
-	print("here")
 	while True:
 		try:
 			msg = connectedSock.recv(1024).decode()
+			#connectedSock.recv() wasn't throwing exceptions, so I manually check for a msg
 			if msg == "":
 				raise Exception("No data")
 			print(msg)
-			print("anywhere")
 			reply = len(msg) * "-"
 			connectedSock.sendall(reply.encode())
-			print("time")
 		except:
 			connectedSock.close()
 			break
