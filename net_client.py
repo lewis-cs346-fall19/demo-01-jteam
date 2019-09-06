@@ -9,4 +9,5 @@ for i in range(100):
 	msg = (i + 1) * "O"
 	sock.sendall(msg.encode())
 	reply = sock.recv(1024).decode()
+	print(reply)
 sock.close()
