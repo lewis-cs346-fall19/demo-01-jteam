@@ -11,6 +11,8 @@ while True:
 	print("here")
 	try:
 		msg = connectedSock.recv(1024).decode()
+		if msg == "":
+			raise Exception("No data")
 		print(msg)
 		print("anywhere")
 		reply = len(msg) * "-"
