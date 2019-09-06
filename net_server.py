@@ -9,11 +9,10 @@ while True:
 	print("got 1")
 	try:
 		msg = connectedSock.recv(1024).decode()
-		print("got 2: " + msg + type(msg)
-		output = msg.length() * "-"
-		connectedSock.sendall(output.encode())
-		print("got 3")
 	except:
 		connectedSock.close()
 		print("got 4")
-print("finished")
+	print("got 2: " + msg + type(msg))
+	output = msg.length() * "-"
+	connectedSock.sendall(output.encode())
+	print("got 3")
