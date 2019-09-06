@@ -7,12 +7,18 @@ sock.listen(5)
 while True:
 	(connectedSock, clientAddress) = sock.accept()
 	print("got 1")
-	try:
-		msg = connectedSock.recv(1024).decode()
-	except:
-		connectedSock.close()
-		print("got 4")
-	print("got 2: " + msg + str(type(msg)))
-	output = msg.length() * "-"
-	connectedSock.sendall(output.encode())
-	print("got 3")
+	while True:
+		try:
+			msg = connectedSock.recv(1024).decode()
+			print("got 2: " + msg + str(type(msg)))
+       			 output = len(msg) * "-"
+ 	      		  connectedSock.sendall(output.encode())
+ 	      		  print("got 3")
+		except:
+			connectedSock.close()
+			print("got 4")
+			break
+		print("got 2: " + msg + str(type(msg)))
+		output = len(msg) * "-"
+		connectedSock.sendall(output.encode())
+		print("got 3")
