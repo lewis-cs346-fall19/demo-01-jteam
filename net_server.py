@@ -12,7 +12,7 @@ while True:
 	except:
 		connectedSock.close()
 		print("got 4")
-	print("got 2: " + msg + type(msg))
+	print("got 2: " + msg + str(type(msg)))
 	output = msg.length() * "-"
 	connectedSock.sendall(output.encode())
 	print("got 3")
